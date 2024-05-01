@@ -1,0 +1,10 @@
+bitbake -c cleanall acs-base acs-packages && cov-build --dir cov-analysis bash -c "bitbake -C compile acs-packages acs-base"; cov-analyze --dir cov-analysis --aggressiveness-level high --all;
+cov-manage-emit -dir cov-analysis list;
+cov-format-errors --dir cov-analysis --html-output html --include-files ".*bluetooth.*"
+
+MACHINE=sa8295adp bitbake -c cleanall bluetooth-stack-fos8 && cov-build --dir cov-analysis bash -c " MACHINE=sa8295adp bitbake -C compile bluetooth-stack-fos8"; 
+cov-analyze --dir cov-analysis --aggressiveness-level high --all; 
+cov-manage-emit -dir cov-analysis list; cov-format-errors --dir cov-analysis --html-output html
+
+bitbake -c cleanall bluetooth-stack-fos8  && cov-build --dir cov-analysis bash -c "bitbake -C compile bluetooth-stack-fos8"; cov-analyze --dir cov-analysis --aggressiveness-level high --all;
+
