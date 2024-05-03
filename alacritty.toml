@@ -52,6 +52,11 @@ style = "Italic"
 family = "MesloLGS Nerd Font"
 style = "Regular"
 
+[keyboard]
+bindings = [
+{ key = "F", mods = "Command|Shift", action = "ToggleFullscreen" },
+]
+
 [scrolling]
 history = 12000
 

@@ -64,6 +64,10 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 alias e=$EDITOR
 alias vim="nvim"
 
+# Aliases
+alias adbpath="/opt/homebrew/bin/adb"
+
+
 # Fix backspace in vim mode
 bindkey -v '^?' backward-delete-char
 zstyle ':vcs_info:git:*' actionformats '(%F{magenta}%b%f|%F{cyan}%a%f)'
