@@ -98,8 +98,11 @@ zle     -N            fzf-history-widget
 bindkey -M vicmd '^R' fzf-history-widget
 bindkey -M viins '^R' fzf-history-widget
 
-# Syntax highlighting plugin
-source "$ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2> /dev/null
+alias glo="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'  --abbrev-commit"
 
-# Iterm shell integration
-source ~/.iterm2_shell_integration.zsh
+# Syntax highlighting plugin
+source "$ZDOTDIR/fsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" 2> /dev/null
+
+# Add fuzzy finding to shell
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

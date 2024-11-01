@@ -18,9 +18,12 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 # Set History File location
 export HISTFILE="$XDG_DATA_HOME/history"
 
-# Set neovim as default editor 
+# Set neovim as default editor
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+# Set default pager to be less
+export PAGER="less"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

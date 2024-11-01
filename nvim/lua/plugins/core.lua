@@ -1,5 +1,5 @@
 return {
-    -- C-{hjkl} split navigation for nvim and tmux
+    -- C-{hjkl} split nagivation for nvim and tmux
     {
         "christoomey/vim-tmux-navigator",
         lazy = false,

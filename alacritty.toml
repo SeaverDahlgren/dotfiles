@@ -63,3 +63,4 @@ history = 12000
 [window]
 decorations = "none"
 opacity = 1.0
+option_as_alt = "OnlyLeft"

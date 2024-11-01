@@ -3,7 +3,10 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-
+        event = { "BufReadPost", "BufNewFile", },
+        keys =  {
+            {"<leader>ts", "<cmd>TSToggle highlight<CR>", noremap = true, silent = true, desc = "Toggle Highlight" },
+        },
         opts = {
             ensured_installed = {
                 "bash",
@@ -20,6 +23,7 @@ return {
                 "go",
                 "lua",
                 "make",
+                "markdown",
                 "python",
                 "toml",
                 "vim",
@@ -50,5 +54,10 @@ return {
             { "<leader>hff", "<cmd>Telescope find_files hidden=true<CR>", noremap = true, silent = true},
         },
         config = true,
+    },
+
+    -- Fugitive git plugin
+    {
+        "tpope/vim-fugitive",
     },
 }
