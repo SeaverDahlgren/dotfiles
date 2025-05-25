@@ -25,5 +25,3 @@ export VISUAL="nvim"
 # Set default pager to be less
 export PAGER="less"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
