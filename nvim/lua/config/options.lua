@@ -12,8 +12,8 @@ vim.opt.tabstop = 8
 -- vim.opt.softtabstop = 4
 
 -- Sets no auto new line on save
-vim.opt.fixendofline = false 
-vim.opt.fixeol = false 
+vim.opt.fixendofline = false
+vim.opt.fixeol = false
 
 -- Set up colors for nvim
 vim.opt.termguicolors = true
@@ -21,3 +21,6 @@ vim.opt.termguicolors = true
 -- Set Split Directions
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+vim.g.tmux_navigator_no_mappings = 1
+vim.g.tmux_navigator_netrw_workaround = 1

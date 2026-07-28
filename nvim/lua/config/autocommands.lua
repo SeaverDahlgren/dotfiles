@@ -7,3 +7,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     command = "keeppatterns %s/\\s\\+$//e"
 })
 
+-- Remap netrw refresh
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "netrw",
+    callback = function()
+        pcall(vim.api.nvim_buf_del_keymap, 0, 'n', '<C-L>')
+    end,
+})
+
