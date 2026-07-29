@@ -15,6 +15,7 @@ set -euo pipefail
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 ZDOTDIR_TARGET="${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}"
 
 INSTALL_NVIM=1
@@ -258,6 +259,16 @@ install_zsh() {
 
   link_path "$DOTFILES_DIR/.zprofile" "$HOME/.zprofile"
   link_path "$DOTFILES_DIR/.zshrc" "$ZDOTDIR_TARGET/.zshrc"
+
+  local histfile="$XDG_CACHE_HOME/zsh/history"
+  if [ "$DRY_RUN" -eq 1 ]; then
+    dry "create history file at $histfile"
+  else
+    mkdir -p "$(dirname "$histfile")"
+    touch "$histfile"
+    ok "history file ready at $histfile"
+  fi
+
   ok "Zsh config linked (ZDOTDIR=$ZDOTDIR_TARGET)."
 }
 
